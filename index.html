@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property='og:image'
+        content='https://res.cloudinary.com/dvdpkvkj2/image/upload/v1664903201/Capture_u0a2ts.png' />
+    <meta property='og:description' content='This is a simple rock, paper, scissors game' />
+    <link rel="shortcut icon" type="image/png"
+        href="https://res.cloudinary.com/dvdpkvkj2/image/upload/v1664367388/logo_q2q809.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Rock Paper Scissor</title>
+
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="mx-auto col text-center p-1">
+                <h1>Rock, Paper, Scissor</h1>
+                <span>Game level: Easy</span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main-container text-center">
+            <div class="column-container">
+                <div class="col text-center">
+                    <h2 class="text-start">Score</h2>
+                    <div class="score-container">
+                        <h3 class="player-score">0</h3>
+                    </div>
+
+                    <img src="./images/rock.png" alt="" id="player-1" class="hands">
+                </div>
+                <div class="col text-center">
+                    <h2 class="text-end">Score</h2>
+                    <div class="score-container">
+                        <h3 class="bot-score">0</h3>
+                    </div>
+
+                    <img src="./images/rock_right.png" alt="" id="player-2" class="hands">
+                </div>
+            </div>
+
+            <div class="container-fluid btn-container mt-2">
+                <button class="btn btn-secondary" data-bs-toggle="modal" id="choose-attack" data-bs-target="#myModal">
+                    Choose Attack
+                </button>
+            </div>
+
+        </div>
+
+
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-head p-2">
+                        <button type="button" class="close float-end" data-bs-dismiss="modal">
+                            x
+                        </button>
+                        <h2 class="text-center ps-4">Pick your choice</h2>
+
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body text-center">
+                        <div class="col-sm btn-container p-1 d-flex justify-content-around">
+                            <button class="btn-sm" id="rock">
+                                <img src="./images/rock.png" alt="">
+                            </button>
+
+                            <button class="btn-sm" id="paper">
+                                <img src="./images/pp.png" alt="">
+                            </button>
+
+                            <button class="btn-sm" id="scissor">
+                                <img src="./images/sc.png" alt="">
+                            </button>
+                        </div>
+
+                        <button class="btn btn-secondary" id="start">
+                            Start Game
+                        </button>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <!-- <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Losing modal -->
+        <div class="modal fade" id="losingModal" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Modal body -->
+                    <div class="modal-body text-center">
+                        <h2 class="text-center">You Win!</h2>
+                        <button class="btn btn-secondary" id="restartLevel">
+                            Restart Game
+                        </button>
+
+                        <button class="btn btn-secondary ulit" id="changeLevel">
+                            Change Level
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    <script src="./javascript/main.js" defer></script>
+
+</body>
+
+</html>
