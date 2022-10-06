@@ -61,17 +61,19 @@ $(document).ready(function () {
     setTimeout(() => {
       $(player1).attr("src", `./images/${attack}.png`);
       $(player2).attr("src", `./images/${bot(item)}_right.png`);
-      setTimeout(() => startGame(attack, item), 1000);
-      $(hands).removeClass("animate__bounce");
+      setTimeout(() => {
+        $(hands).removeClass("animate__bounce");
+        startGame(attack, item);
+      }, 1500);
     }, 1500);
 
     $("#choose-attack, #reset-game").addClass("disabled");
     setTimeout(() => {
+      resetDisplay();
+    }, 4000);
+    setTimeout(() => {
       $("#choose-attack, #reset-game").removeClass("disabled");
-      setTimeout(() => {
-        resetDisplay();
-      }, 4000);
-    }, 3000);
+    }, 4000);
   });
 
   $("#changeLevel").click(() => {
@@ -95,6 +97,7 @@ $(document).ready(function () {
 
 const intervalManager = (flag, time) => {
   let intervalID = null;
+
   if (flag) {
     intervalID = setInterval(checkScore, time);
   } else {
@@ -103,7 +106,7 @@ const intervalManager = (flag, time) => {
 };
 
 const checkScore = () => {
-  console.log("hello");
+  
   let playerPoints = parseInt($(".player-score").text());
   let botPoints = parseInt($(".bot-score").text());
   if (parseInt(playerPoints) === 5) {
